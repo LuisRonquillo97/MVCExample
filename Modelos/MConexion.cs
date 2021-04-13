@@ -10,7 +10,8 @@ namespace Modelos
     //clase que se encarga de conectar las entitades y su configuración a la BD.
     public class MConexion: DbContext
     {
-        public static string CadenaConexion = @"Data Source=LRONQUILLO\SQLEXPRESS;Initial Catalog=GenericSalesStore;Integrated Security=True;User ID=sa;Password=nAxx*362";
+        //CADENA DE CONEXIÓN
+        public static string CadenaConexion = @"Data Source=LRONQUILLO\SQLEXPRESS;Initial Catalog=GenericSalesStore;Integrated Security=True;User ID=sa;Password=xxxxxxxx";
 
         #region Attributes
         //atributos: aquí se colocan las entitades que utilizaremos con Entity Framework
