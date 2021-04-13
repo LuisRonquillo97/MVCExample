@@ -6,15 +6,21 @@ using System.Linq;
 
 namespace Modelos
 {
-    public class MArticulos : iMetodosCatalogo<MArticulos>
+    public class MArticulos : IIMetodosCatalogo<MArticulos>
     {
+        //parámetro donde almacenaremos el error si llega a existir alguno.
         public string Error { get; set; }
-
+        //inicializamos la conexión a BD
         readonly MConexion Context = new MConexion();
+        //método para guardar, necesita una entidad de artículo.
         public bool Guardar(EArticulo articulo)
         {
+            //intenta guardar y retornar true si lo logra
+            //si no, guardamos el error en el parámetro y devolvemos false.
+            //el resto de métodos tienen un comportamiento similar a este.
             try
             {
+                //utilizando EF, agregamoos la entidad artículo, y guardamos cambios.
                 Context.Articulos.Add(articulo);
                 Context.SaveChanges();
                 return true;

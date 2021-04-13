@@ -9,6 +9,7 @@ namespace Modelos.ConfiguracionEntidades
 {
     public class EcArticulo : IEntityTypeConfiguration<EArticulo>
     {
+        //aquí se relacionan las propiedades del modelo a los campos de base de datos
         public void Configure(EntityTypeBuilder<EArticulo> builder)
         {
             builder.HasKey(x => x.ID);
